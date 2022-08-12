@@ -22,10 +22,11 @@ export const Home = () => {
     useEffect(() => {
 
         if(city){
+            setIsLoading(true)
             getWeatherByCity(city).then(({ data }) => {
                 setWeather(data);
                 setDataTiles(createArray(data));
-              });
+              }).finally(()=> setIsLoading(false));
               return
         }
       
