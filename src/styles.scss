@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&display=swap');
 
 .container{
-    width: 821px;
+    max-width: 821px;
     margin: 0 auto 20px auto;
-    
-    @media screen and (max-width: 1000px) {
-        width: 350px;
-      }
+    min-width: 400px;
+    padding: 0 15px 0 15px;
+    // @media screen and (max-width: 1000px) {
+    //     width: 350px;
+    //   }
 }
 
 .list_tile{

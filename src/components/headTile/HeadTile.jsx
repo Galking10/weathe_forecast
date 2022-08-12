@@ -1,8 +1,11 @@
+import { Icons } from '../../asset/IconSun';
 import './styles.scss';
+
 
 export const HeadTile = ({mainT, maxT, minT, city, img})=>{
     return(
-        <div className='container main'>
+        <div className='container'>
+            <div className='main'>
             <div className='degrees'><p className='degrees_now'>{mainT} c</p>
             <div className='min_max'>
                 <p className='max'>Max : {maxT} c</p>
@@ -11,7 +14,8 @@ export const HeadTile = ({mainT, maxT, minT, city, img})=>{
             </div>
             <div className='place'>
                 <p>{city}</p>
-                {/* {img[0] && <img src={`http://openweathermap.org/img/wn/${img[0].icon}@2x.png`} alt='weather icon'/>} */}
+                {img && <Icons type={img[0].icon}/>}
+            </div>
             </div>
         </div>
     )
