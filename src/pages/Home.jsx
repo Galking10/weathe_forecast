@@ -10,7 +10,6 @@ import calvinCount from '../helpers/calvinCount'
 import '../styles.scss'
 import { useNavigate, useParams } from "react-router-dom";
 
-
 export const Home = () => {
     const [weather, setWeather] = useState({});
     const [dataTiles, setDataTiles] = useState([]);
@@ -18,35 +17,43 @@ export const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     let navigate = useNavigate();
     const { city } = useParams();
+    const geolocationAPI = navigator.geolocation;
+    
   
     useEffect(() => {
-
+      setIsLoading(true)
         if(city){
-            setIsLoading(true)
             getWeatherByCity(city).then(({ data }) => {
                 setWeather(data);
                 setDataTiles(createArray(data));
-              }).finally(()=> setIsLoading(false));
+              }).catch(() => alert(`City don't found, try again`))
+              .finally(()=> setIsLoading(false));
               return
         }
       
-      if ('geolocation' in navigator) {
-        setIsLoading(true)
-        navigator.geolocation.getCurrentPosition(function (position) {
-          getByCoordinate(
-            position.coords.latitude,
-            position.coords.longitude,
-          ).then(({ data }) => {
-            setWeather(data);
-            setDataTiles(createArray(data));
-          }).finally(()=> setIsLoading(false));
-        });
+      if ( !geolocationAPI) {
+        alert("Geolocation API is not available in your browser!");
       } else {
-        setIsLoading(true)
-        getWeatherByCity('london').then(({ data }) => {
-          setWeather(data);
-          setDataTiles(createArray(data));
-        }).finally(()=> setIsLoading(false));
+        geolocationAPI.getCurrentPosition(
+          (position) => {
+            const { coords } = position;
+  
+            getByCoordinate(coords.latitude, coords.longitude)
+              .then(({ data }) => {
+                setWeather(data);
+                setDataTiles(createArray(data));
+              })
+              .finally(() => setIsLoading(false));
+          },
+          (error) => {
+            getWeatherByCity("london")
+              .then(({ data }) => {
+                setWeather(data);
+                setDataTiles(createArray(data));
+              })
+              .finally(() => setIsLoading(false));
+          }
+        );
       }
     }, [city]);
   
