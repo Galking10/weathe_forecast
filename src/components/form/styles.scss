@@ -19,7 +19,7 @@ input {
   outline: none;
 
   @media screen and (max-width: 1000px) {
-    width: 210px;
+    min-width: 210px;
     border-radius: 16px 0 0 16px;
     padding-inline: 20px;
   }

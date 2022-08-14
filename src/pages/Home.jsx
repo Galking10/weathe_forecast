@@ -52,6 +52,7 @@ export const Home = () => {
       e.preventDefault();
       const valueTolowerCase = value.toLowerCase();
     navigate(`../${valueTolowerCase}`, { replace: true });
+    setValue('')
     };
   
     return (
