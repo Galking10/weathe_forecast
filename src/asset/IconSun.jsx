@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Icons = ({ type }) => {
-  console.log(type);
+  
 
   if(type === '01d'){
     return(

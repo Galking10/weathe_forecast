@@ -55,7 +55,7 @@ export const Home = () => {
           }
         );
       }
-    }, [city]);
+    }, [city, geolocationAPI]);
   
     const onSubmit = e => {
       e.preventDefault();
