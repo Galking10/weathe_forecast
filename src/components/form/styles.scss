@@ -45,10 +45,7 @@ button {
   color: #ffffff;
   cursor: pointer;
 
-  @media screen and (max-width: 1000px) {
-    max-width: 197px;
-    
-  }
+
   @media screen and (max-width: 809px) {
     border-radius: 0 16px 16px 0;
   }
