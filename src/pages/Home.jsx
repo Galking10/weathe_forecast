@@ -31,6 +31,7 @@ export const Home = () => {
         }
       
       if ('geolocation' in navigator) {
+        setIsLoading(true)
         navigator.geolocation.getCurrentPosition(function (position) {
           getByCoordinate(
             position.coords.latitude,
@@ -38,13 +39,14 @@ export const Home = () => {
           ).then(({ data }) => {
             setWeather(data);
             setDataTiles(createArray(data));
-          });
+          }).finally(()=> setIsLoading(false));
         });
       } else {
+        setIsLoading(true)
         getWeatherByCity('london').then(({ data }) => {
           setWeather(data);
           setDataTiles(createArray(data));
-        });
+        }).finally(()=> setIsLoading(false));
       }
     }, [city]);
   

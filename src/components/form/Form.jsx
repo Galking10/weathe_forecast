@@ -7,7 +7,7 @@ export const Form = ({value, onChange, onSubmit})=>{
     }
     return(
         <form className='container find' onSubmit={onSubmit}>
-            <input className='input' value={value} onChange={handleChange} placeholder='London (for example)'></input>
+            <input className='input' value={value} onChange={handleChange} placeholder='City'></input>
             <button className='button' type='submit'>FIND</button>
         </form>
         
