@@ -3,7 +3,7 @@ import React from 'react';
 export const Icons = ({ type }) => {
   
 
-  if(type === '01d'){
+  if(type === '01d' || type === '01n'){
     return(
       <div className='svg_size'>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.984 511.984"
@@ -16,7 +16,7 @@ export const Icons = ({ type }) => {
   </div>
     )
   }
-  if(type === '02d'){
+  if(type === '02d' || type ==='02n'){
     return(
       <div className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.176 60.176" fill='grey'>
@@ -30,7 +30,7 @@ export const Icons = ({ type }) => {
     )
   }
 
-  if(type === '03d'){
+  if(type === '03d' || type === '03n'){
     return(
       <div className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.985 511.985" >
@@ -43,7 +43,7 @@ export const Icons = ({ type }) => {
     )
   }
 
-  if(type === '04d' ){
+  if(type === '04d' || type === '04n' ){
     return(
       <div className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.985 511.985" >
@@ -57,7 +57,7 @@ export const Icons = ({ type }) => {
     
   }
 
-  if(type === '09d' ){
+  if(type === '09d' || type === '09n'){
     return(
       <div className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.984 511.984" >
@@ -71,7 +71,7 @@ export const Icons = ({ type }) => {
     
   }
 
-  if(type === '10d'){
+  if(type === '10d' || type === '10n'){
     return(
       <div  className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.984 511.984" >
@@ -85,7 +85,7 @@ export const Icons = ({ type }) => {
     
   }
 
-  if(type === '11d'){
+  if(type === '11d' || type === '11n'){
     return(
       <div  className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.984 511.984" >
@@ -99,7 +99,7 @@ export const Icons = ({ type }) => {
     
   }
 
-  if(type === '13d'){
+  if(type === '13d' || type === '13n'){
     return(
       <div  className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.984 511.984" >
@@ -116,7 +116,7 @@ export const Icons = ({ type }) => {
    
   }
 
-  if(type === '50d'){
+  if(type === '50d' || type === '50n'){
     return(
       <div  className='svg_size'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.985 511.985" >
