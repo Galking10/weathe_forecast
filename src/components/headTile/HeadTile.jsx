@@ -1,7 +1,6 @@
 import { Icons } from '../../asset/IconSun';
 import './styles.scss';
 
-
 export const HeadTile = ({mainT, maxT, minT, city, img})=>{
     return(
         <div className='container'>
